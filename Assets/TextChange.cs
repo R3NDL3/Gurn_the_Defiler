@@ -4,8 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TextChange : MonoBehaviour
+ 
 {
     public Text story;
+    public GameObject Play;
+    public GameObject Warrior;
+    public GameObject Rogue;
+    public GameObject Wizard;
+    public GameObject Title;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +24,13 @@ public class TextChange : MonoBehaviour
         
     }
 
-    public void Change()
+    public void Change1()
     {
         story.text = "Choose your class";
+        Play.SetActive (false);
+        Title.SetActive (false);
+        Warrior.SetActive (true);
+        Rogue.SetActive (true);
+        Wizard.SetActive (true);
     }
 }
