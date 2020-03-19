@@ -8,9 +8,12 @@ public class TextChange : MonoBehaviour
 {
     public Text story;
     public GameObject Play;
-    public GameObject Warrior;
-    public GameObject Rogue;
-    public GameObject Wizard;
+    public GameObject brawl;
+    public GameObject pickpocket;
+    public GameObject con;
+    public GameObject knight;
+    public GameObject hunter;
+    public GameObject wizard;
     public GameObject Title;
     // Start is called before the first frame update
     void Start()
@@ -26,11 +29,27 @@ public class TextChange : MonoBehaviour
 
     public void Change1()
     {
-        story.text = "Choose your class";
+        story.text = "You awaken after a nights rest. Today you must accept your punishment, but why were you banished?";
         Play.SetActive (false);
         Title.SetActive (false);
-        Warrior.SetActive (true);
-        Rogue.SetActive (true);
-        Wizard.SetActive (true);
+        brawl.SetActive (true);
+        pickpocket.SetActive (true);
+        con.SetActive (true);
+    }
+    public void Brawl()
+    {
+        Change2();
+        Stats.body += 1;
+        Debug.Log(Stats.body);
+    }
+    public void Change2()
+    {
+        story.text = "Despite your criminality, you have found friends in high places. Who do you see before leaving?";
+        brawl.SetActive(false);
+        pickpocket.SetActive(false);
+        con.SetActive(false);
+        knight.SetActive(true);
+        hunter.SetActive(true);
+        wizard.SetActive(true);
     }
 }
